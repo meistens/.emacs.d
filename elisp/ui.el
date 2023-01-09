@@ -119,7 +119,8 @@
 (setq use-dialog-box nil)
 
 ;; line numbers
-;; Hook line numbers to only when files are opened, also use linum-mode for emacs-version< 26
+;; Hook line numbers to only when files are opened, also use linum-mode for
+;; emacs-version< 26
 (if (version< emacs-version "26")
     (global-linum-mode)
   (add-hook 'text-mode-hook #'display-line-numbers-mode)
@@ -132,6 +133,9 @@
 (setq initial-major-mode 'text-mode)
 ;; https://www.youtube.com/watch?v=NfjsLmya1PI
 (setq initial-scratch-message "Back to work or cry meistens?\n")
+
+;; hits the sweet spot on a 1920px screen and company box
+(if (window-system) (set-frame-size (selected-frame) 120 40))
 
 (provide 'ui)
 ;;; ui.el ends here
