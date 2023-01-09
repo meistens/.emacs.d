@@ -1,0 +1,17 @@
+
+;; ----- amx-history -----
+(
+ eval-buffer
+ python-mode
+ cd
+ 5x5
+ amx
+ arp
+ dbx
+)
+
+;; ----- amx-data -----
+(
+ (python-mode . 1)
+ (eval-buffer . 5)
+)
