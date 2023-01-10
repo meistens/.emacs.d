@@ -1,8 +1,8 @@
 
 ;; ----- amx-history -----
 (
- eval-buffer
  eshell
+ eval-buffer
  python-mode
  cd
  5x5
@@ -14,5 +14,5 @@
 (
  (python-mode . 1)
  (eval-buffer . 18)
- (eshell . 2)
+ (eshell . 3)
 )

@@ -72,6 +72,8 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 
 (require 'org)
 
+(require 'python)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -79,7 +81,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
  ;; If there is more than one, they won't work right.
  '(company-show-quick-access t nil nil "Customized with use-package company")
  '(package-selected-packages
-   '(org-bullets flyspell-correct-ivy tide typescript-mode web-mode company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
+   '(elpy org-bullets flyspell-correct-ivy tide typescript-mode web-mode company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
  '(warning-suppress-types '((comp) (comp) (comp) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -88,3 +90,5 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
  ;; If there is more than one, they won't work right.
  )
 (put 'dired-find-alternate-file 'disabled nil)
+(provide 'init)
+;;; init.el ends here
