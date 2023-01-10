@@ -1,14 +1,20 @@
 ;;; -*- coding: utf-8; mode: lisp-data -*-
-(("/home/meistens/.emacs.d/elisp/ui.el" . 4296)
- ("/home/meistens/.emacs.d/elisp/"
-  (dired-filename . "/home/meistens/.emacs.d/elisp/ui.el"))
- ("/home/meistens/"
-  (dired-filename . "/home/meistens/.backup"))
+(("/home/meistens/.emacs.d/init.el" . 2206)
+ ("/home/meistens/.emacs.d/elisp/org.el" . 679)
+ ("/home/meistens/Projects/tests/"
+  (dired-filename . "/home/meistens/Projects/tests/test.c"))
+ ("/home/meistens/.emacs.d/elpa/org-bullets-20200317.1740/org-bullets-autoloads.el" . 1061)
  ("/home/meistens/.emacs.d/"
-  (dired-filename . "/home/meistens/.emacs.d/.."))
+  (dired-filename . "/home/meistens/.emacs.d/init.el"))
+ ("/home/meistens/.emacs.d/elisp/"
+  (dired-filename . "/home/meistens/.emacs.d/elisp/.."))
+ ("/home/meistens/"
+  (dired-filename . "/home/meistens/.emacs.d"))
+ ("/home/meistens/.emacs.d/.gitmodules" . 123)
+ ("/home/meistens/.emacs.d/elisp/ui.el" . 4322)
+ ("/home/meistens/.emacs.d/.gitignore" . 504)
  ("/home/meistens/.emacs.d/elpa/flyspell-correct-ivy-20220520.630/flyspell-correct-ivy-autoloads.el" . 733)
  ("/home/meistens/.emacs.d/elpa/flyspell-correct-20220520.630/flyspell-correct-autoloads.el" . 3586)
- ("/home/meistens/.emacs.d/init.el" . 3269)
  ("/home/meistens/.emacs.d/elisp/globals.el" . 4376)
  ("/home/meistens/.emacs.d/elisp/progs.el" . 20228)
  ("/home/meistens/.emacs.d/elpa/tide-20220514.614/tide-autoloads.el" . 2665)
