@@ -1,5 +1,7 @@
 ;;; init.el --- -*- lexical-binding: t -*-
-;;
+;;; commentary:
+;;; code:
+
 ;; better GC
 (defvar better-gc-cons-threshold 134217728 ; 128mb
   "The default value to use for `gc-cons-threshold'.
@@ -54,25 +56,25 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 (require 'package-manager)
 
 ;; UI
-(require 'ui)
+(require 'sys-UI)
 
 ;; eglot
-(require 'eglot)
+(require 'sys-eglot)
 
 ;; global functionalities
-(require 'globals)
+(require 'sys-globals)
 
 ;; some configs
-(require 'configs)
+(require 'sys-configs)
 
-;; programming
-(require 'progs)
+;; programming tools
+(require 'sys-progs)
 
-(require 'typescript)
+;; typescript only
+;; (require 'sys-typescript)
 
-(require 'org)
-
-(require 'python)
+;; python only
+(require 'sys-python)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

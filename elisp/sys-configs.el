@@ -1,4 +1,4 @@
-;;; configs.el --- -*- lexical-binding: t -*-
+;;; sys-configs.el --- -*- lexical-binding: t -*-
 ;;; commentary:
 ;;; code:
 
@@ -57,5 +57,5 @@
 ;; Add a newline automatically at the end of the file upon save.
 (setq require-final-newline t)
 
-(provide 'configs)
-;;; configs.el ends here
+(provide 'sys-configs)
+;;; sys-configs.el ends here

@@ -3,17 +3,24 @@
 (
  revert-buffer
  eval-buffer
- eshell
- python-mode
- cd
- 5x5
- amx
+ eglot-shutdown
+ eglot
+ org-version
+ package-refresh-contents
+ package-install
 )
 
 ;; ----- amx-data -----
 (
  (python-mode . 1)
- (eval-buffer . 28)
- (eshell . 7)
- (revert-buffer . 5)
+ (eval-buffer . 33)
+ (eshell . 8)
+ (revert-buffer . 21)
+ (org-mode . 1)
+ (package-install . 5)
+ (package-delete . 1)
+ (package-refresh-contents . 2)
+ (org-version . 3)
+ (eglot . 2)
+ (eglot-shutdown . 1)
 )

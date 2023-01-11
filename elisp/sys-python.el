@@ -1,4 +1,4 @@
-;;; python.el --- -*- lexical-binding: t --- -*-
+;;; sys-python.el --- -*- lexical-binding: t --- -*-
 ;;; commentary:
 ;;; code:
 
@@ -31,5 +31,5 @@
 ;; update: not gonna bother setting up virtualenv right now
 
 ;; (y or n) y
-(provide 'python)
-;;; python.el ends here
+(provide 'sys-python)
+;;; sys-python.el ends here

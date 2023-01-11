@@ -1,4 +1,4 @@
-;;; progs.el --- -*- lexical-binding: t -*-
+;;; sys-progs.el --- -*- lexical-binding: t -*-
 ;;; commentary:
 ;;; code:
 
@@ -428,5 +428,5 @@ If all failed, try to complete the common part with `company-complete-common'"
 (setq whitespace-style '(face lines-tail))
 
 (add-hook 'prog-mode-hook 'whitespace-mode)
-(provide 'progs)
-;;; progs.el ends here
+(provide 'sys-progs)
+;;; sys-progs.el ends here

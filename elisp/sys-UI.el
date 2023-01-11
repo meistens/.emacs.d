@@ -1,4 +1,4 @@
-;;; ui.el --- -*- lexical-binding: t -*-
+;;; sys-UI.el --- -*- lexical-binding: t -*-
 ;;; commentary:
 ;;; code:
 
@@ -78,5 +78,5 @@
 ;; displays a panel for commands keyed in
 (use-package command-log-mode)
 
-(provide 'ui)
-;;; ui.el ends here
+(provide 'sys-UI)
+;;; sys-UI.el ends here

@@ -1,4 +1,4 @@
-;;; globals.el --- -*- lexical-binding: t -*-
+;;; sys-globals.el --- -*- lexical-binding: t -*-
 ;;; commentary:
 ;;; code:
 
@@ -145,5 +145,5 @@
 ;; trash backup files
 (setq backup-directory-alist            '((".*" . "~/.Trash")))
 
-(provide 'globals)
-;;; globals.el ends here
+(provide 'sys-globals)
+;;; sys-globals.el ends here
