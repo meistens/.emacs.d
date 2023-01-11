@@ -1,7 +1,10 @@
 ;;; -*- coding: utf-8; mode: lisp-data -*-
-(("/home/meistens/.emacs.d/README.org" . 703)
- ("/home/meistens/.emacs.d/"
-  (dired-filename . "/home/meistens/.emacs.d/README.org"))
+(("/home/meistens/.emacs.d/"
+  (dired-filename . "/home/meistens/.emacs.d/.gitignore"))
+ ("/home/meistens/.emacs.d/snippets/"
+  (dired-filename . "/home/meistens/.emacs.d/snippets/.."))
+ ("/home/meistens/.emacs.d/.gitignore" . 3527)
+ ("/home/meistens/.emacs.d/README.org" . 703)
  ("/home/meistens/"
   (dired-filename . "/home/meistens/.emacs.d"))
  ("/home/meistens/Projects/"
@@ -35,7 +38,6 @@
  ("/home/meistens/.emacs.d/elisp/package-manager.el" . 1486)
  ("/home/meistens/.emacs.d/elpa/org-ml-20220711.1528/org-ml-autoloads.el" . 641)
  ("/home/meistens/Projects/tests/yuhjs.py" . 13)
- ("/home/meistens/.emacs.d/.gitignore" . 610)
  ("/home/meistens/.emacs.d/elpa/command-log-mode-20160413.447/command-log-mode-autoloads.el" . 1263)
  ("/home/meistens/.emacs.d/elpy/rpc-venv/"
   (dired-filename . "/home/meistens/.emacs.d/elpy/rpc-venv/pyvenv.cfg"))
