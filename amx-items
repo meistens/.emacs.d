@@ -1,18 +1,19 @@
 
 ;; ----- amx-history -----
 (
- eshell
+ revert-buffer
  eval-buffer
+ eshell
  python-mode
  cd
  5x5
  amx
- arp
 )
 
 ;; ----- amx-data -----
 (
  (python-mode . 1)
- (eval-buffer . 18)
- (eshell . 3)
+ (eval-buffer . 28)
+ (eshell . 7)
+ (revert-buffer . 5)
 )
