@@ -1,0 +1,11 @@
+* Docs is a work in progress
+** It will contain my progress so far and yep, credits will be given (couldn't have done it without looking at their configs and emacswiki too)
+*** Why this long to figure stuff out? What if i told you i botched up my setup trying to be unique (realized after trying and failing to get Org to work)
+
+Ah well, once I'm done, i'll be cleaning up the code and other stuff... time to get serious y'all
+
+Notes:
+- vterm setup, eshell is not a proper shell per se (am i right?), shell is not what I wanna use
+- Org setup
+- Dashboard (maybe... or not, scratch looks nice)
+- More tweaks to make things better (next line after 80 char met on current frame, keep same frame size,...)

@@ -1,23 +1,32 @@
 ;;; -*- coding: utf-8; mode: lisp-data -*-
-(("/home/meistens/.emacs.d/elisp/sys-typescript.el" . 1530)
- ("/home/meistens/.emacs.d/elisp/sys-eglot.el" . 8)
- ("/home/meistens/.emacs.d/elisp/"
-  (dired-filename . "/home/meistens/.emacs.d/elisp/sys-eglot.el"))
- ("/home/meistens/Projects/tests/weihfoih;L.ts" . 5)
- ("/home/meistens/.emacs.d/init.el" . 283)
+(("/home/meistens/.emacs.d/elisp/"
+  (dired-filename . "/home/meistens/.emacs.d/elisp/sys-python.el"))
+ ("/home/meistens/.emacs.d/elisp/sys-python.el" . 1858)
+ ("/home/meistens/Projects/python_projects/test_venv/"
+  (dired-filename . "/home/meistens/Projects/python_projects/test_venv/testing.py"))
  ("/home/meistens/.emacs.d/"
-  (dired-filename . "/home/meistens/.emacs.d/init.el"))
+  (dired-filename . "/home/meistens/.emacs.d/elisp"))
  ("/home/meistens/"
   (dired-filename . "/home/meistens/.emacs.d"))
  ("/home/meistens/Projects/"
   (dired-filename . "/home/meistens/Projects/.."))
+ ("/home/meistens/Projects/python_projects/"
+  (dired-filename . "/home/meistens/Projects/python_projects/.."))
+ ("/home/meistens/Projects/python_projects/real_venv_test/"
+  (dired-filename . "/home/meistens/Projects/python_projects/real_venv_test/.."))
+ ("/home/meistens/Projects/python_projects/test_venv/testing.py" . 11)
+ ("/home/meistens/.emacs.d/elpa/pyenv-mode-20200518.1521/pyenv-mode-autoloads.el" . 1571)
+ ("/home/meistens/.emacs.d/elpa/pythonic-20220723.1741/pythonic-autoloads.el" . 584)
+ ("/home/meistens/.emacs.d/init.el" . 283)
+ ("/home/meistens/.emacs.d/elisp/sys-typescript.el" . 1530)
+ ("/home/meistens/.emacs.d/elisp/sys-eglot.el" . 8)
+ ("/home/meistens/Projects/tests/weihfoih;L.ts" . 5)
  ("/home/meistens/Projects/tests/"
   (dired-filename . "/home/meistens/Projects/tests/.."))
  ("/home/meistens/Projects/tests/wfkjac;lk.js" . 11)
  ("/home/meistens/Projects/tests/test.js" . 25)
  ("/home/meistens/Projects/tests/tesdu.js" . 11)
  ("/home/meistens/Projects/tests/test.py" . 106)
- ("/home/meistens/.emacs.d/elisp/sys-python.el" . 1040)
  ("/home/meistens/.emacs.d/elisp/sys-configs.el" . 1578)
  ("/home/meistens/.emacs.d/elisp/sys-globals.el" . 4434)
  ("/home/meistens/.emacs.d/elisp/sys-progs.el" . 18174)
