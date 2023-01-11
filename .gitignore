@@ -201,3 +201,31 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+# more emacs stuff
+/ .backup/
+/.cache/
+/.last-package-update-day
+/amx-items
+/bookmarks
+/custom-set-variables.el
+/elpa/
+/mu4e/
+/places
+/projectile-bookmarks.eld
+/recentf
+/tramp
+/transient/history.el
+/network-security.data
+/pyim/
+/.dap-breakpoints
+/eshell/
+/%backup%~
+/.emacs.desktop
+/.org-id-locations
+/eln-cache/
+/url/
+/request/
+/init-private.el
+/emojis/
+/elpy/

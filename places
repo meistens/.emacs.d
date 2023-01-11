@@ -1,17 +1,18 @@
 ;;; -*- coding: utf-8; mode: lisp-data -*-
-(("/home/meistens/.emacs.d/elisp/"
-  (dired-filename . "/home/meistens/.emacs.d/elisp/sys-python.el"))
- ("/home/meistens/.emacs.d/elisp/sys-python.el" . 1858)
- ("/home/meistens/Projects/python_projects/test_venv/"
-  (dired-filename . "/home/meistens/Projects/python_projects/test_venv/testing.py"))
+(("/home/meistens/.emacs.d/README.org" . 703)
  ("/home/meistens/.emacs.d/"
-  (dired-filename . "/home/meistens/.emacs.d/elisp"))
+  (dired-filename . "/home/meistens/.emacs.d/README.org"))
  ("/home/meistens/"
   (dired-filename . "/home/meistens/.emacs.d"))
  ("/home/meistens/Projects/"
   (dired-filename . "/home/meistens/Projects/.."))
  ("/home/meistens/Projects/python_projects/"
   (dired-filename . "/home/meistens/Projects/python_projects/.."))
+ ("/home/meistens/.emacs.d/elisp/"
+  (dired-filename . "/home/meistens/.emacs.d/elisp/sys-python.el"))
+ ("/home/meistens/.emacs.d/elisp/sys-python.el" . 1858)
+ ("/home/meistens/Projects/python_projects/test_venv/"
+  (dired-filename . "/home/meistens/Projects/python_projects/test_venv/testing.py"))
  ("/home/meistens/Projects/python_projects/real_venv_test/"
   (dired-filename . "/home/meistens/Projects/python_projects/real_venv_test/.."))
  ("/home/meistens/Projects/python_projects/test_venv/testing.py" . 11)
