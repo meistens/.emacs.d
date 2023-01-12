@@ -10,8 +10,7 @@
   (org-indent-mode)
   (variable-pitch-mode 1)
   (auto-fill-mode 0)
-  (visual-line-mode 1)
-  (diminish org-indent-mode))
+  (visual-line-mode 1))
 
 ;; Org
 (use-package org
@@ -39,17 +38,22 @@
   (org-superstar-remove-leading-stars t)
   (org-superstar-headline-bullets-list '("◉" "○" "●" "○" "●" "○" "●")))
 
-;; Heading size
-;; (set-face-attribute 'org-document-title nil :font "Iosevka Term SS18" :weight 'bold)
-;; (dolist (face '((org-level-1 . 2)
-;;                 (org-level-2 . 1.1)
-;;                 (org-level-3 . 1.05)
-;;                 (org-level-4 . 1.0)
-;;                 (org-level-5 . 1.1)
-;;                 (org-level-6 . 1.1)
-;;                 (org-level-7 . 1.1)
-;;                 (org-level-8 . 1.1))))
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                          (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+;; its fugly but its my config, edit the values as you wish (and byy edit, i
+;; mean the "1.x" value)
+(dolist (face '((org-level-1 . 1.8)
+                (org-level-2 . 1.7)
+                (org-level-3 . 1.6)
+                (org-level-4 . 1.5)
+                (org-level-5 . 1.4)
+                (org-level-6 . 1.3)
+                (org-level-7 . 1.2)
+                (org-level-8 . 1.1)))
+    (set-face-attribute (car face) nil :font "Iosevka Term SS18" :weight 'regular :height (cdr face)))
 
+;; Make sure org-indent face is available
 (require 'org-indent)
 
 ;; fixed pitch doublechecks
@@ -76,6 +80,9 @@
 (add-to-list 'org-structure-template-alist '("py" . "src python"))
 (add-to-list 'org-structure-template-alist '("json" . "src json"))
 
+;; org appear
+(use-package org-appear
+  :hook (org-mode . org-appear-mode))
 
 (provide 'sys-org)
 ;;; sys-org.el ends here

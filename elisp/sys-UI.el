@@ -79,25 +79,25 @@
 (use-package command-log-mode)
 
 ;; fonts setup for windows, linux and macOS
-;; (pcase system-type
-;;   ((or 'gnu/linux 'windows-nt)
-;;    (set-face-attribute 'default nil
-;; 		       :font "Iosevka Term SS18"
-;; 		       :weight 'semibold
-;; 		       :height (dm/system-settings-get 'emacs/default-face-size)))
-;;   ('darwin (set-face-attribute 'default nil :font "Fira Mono" :height 170)))
+(pcase system-type
+  ((or 'gnu/linux 'windows-nt)
+   (set-face-attribute 'default nil
+		       :font "Iosevka Term SS18"
+		       :weight 'regular
+		       :height (dm/system-settings-get 'emacs/default-face-size)))
+  ('darwin (set-face-attribute 'default nil :font "Iosevka Term SS18" :height 170)))
 
 ;; fixed pitch face
-;; (set-face-attribute 'fixed-pitch nil
-;; 		    :font "Iosevka Term SS18"
-;; 		    :weight 'light
-;; 		    :height (dm/system-settings-get 'emacs/fixed-face-size))
+(set-face-attribute 'fixed-pitch nil
+		    :font "Iosevka Term SS18"
+		    :weight 'regular
+		    :height (dm/system-settings-get 'emacs/fixed-face-size))
 
 ;; variable pitch face
-;; (set-face-attribute 'variable-pitch nil
-;; 		    :font "Iosevka Term SS18"
-;; 		    :height (dm/system-settings-get 'emacs/variable-face-size)
-;; 		    :weight 'light)
+(set-face-attribute 'variable-pitch nil
+		    :font "Iosevka Term SS18"
+		    :height (dm/system-settings-get 'emacs/variable-face-size)
+		    :weight 'regular)
 
    (provide 'sys-UI)
 ;;; sys-UI.el ends here
