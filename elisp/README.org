@@ -8,6 +8,8 @@ If you decided to check out this file before cloning this file, good for you!
 If you didn't, guess you know what you're doing then.
 Before we go any further (and a reminder), OS used for this setup is [[https://getfedora.org/][fedora workstation 37]], though it could work on your OS of choice if you know where to get the packages listed to work on your machine.
 
+* Package manager
+Nothing special here
 
 * Python Venv Setup
 Sets up Python and Pyenv use in Emacs using elpy.
@@ -15,6 +17,7 @@ If you wanna see how, check the docs or [[https://rakan.me/emacs/python-dev-with
 
 ** Installation
 1. Start by installing the following packages:
+   
 #+BEGIN_SRC sh
   sudo dnf install pyenv pyenv-virtualenv pyenv-virtualwrapper
 #+END_SRC
@@ -71,7 +74,7 @@ That's just an example, install the version you think that works best for you
      pyenv versions
    #+END_SRC
 
-** Creating a Python Environment
+** Creating a Python Environment For Emacs
 
  For a new project, create a new environment, and optionally specify the version of Python you want to use. I'll advise you to have a dedicated folder/directory if you plan on using a particular version of Python to run a project.
 
@@ -86,7 +89,62 @@ That's just an example, install the version you think that works best for you
 
    Now that that's out of the way, time to configure Emacs to work with the setup above.
 
-** Elpy
+*** Elpy
 
-Basically, we use elpy as the language server instead of eglot. why? because venv...
-#+INCLUDE: "~/.emacs.d/elisp/sys-python.el src emacs-lisp :range-begin "Elpy" :range-end "-Elpy" :lines "7-15"
+Basically, we use elpy as the language server instead of eglot. why? because configuring is less painful for me. Anyhoo, what you see is the recommended config stated in the docs and using [[https://github.com/pappasam/jedi-language-server][Jedi]] as the language server.
+
+#+BEGIN_SRC elisp
+  (use-package elpy
+    :ensure t
+    :defer t
+    :init
+    (advice-add 'python-mode :before 'elpy-enable)
+    (setq elpy-shell-echo-output nil)
+    (setq elpy-rpc-python-command "python")
+    (setq elpy-rpc-timeout 2)
+    (setq elpy-rpc-backend "jedi"))
+#+END_SRC
+
+Don't forget to install [[https://github.com/proofit404/pyenv-mode][pyenv-mode]] to use the venv setup. What the setup does is activate an environment based on the version set for that directory
+
+#+BEGIN_SRC elisp
+  (use-package pyenv-mode
+    :init
+    (add-to-list 'exec-path "~/.pyenv/shims")
+    (setenv "WORKON_HOME" "~/.pyenv/versions/")
+    :config
+    (pyenv-mode)
+    :bind
+    ("C-x p e" . pyenv-activate-current-project))
+#+END_SRC
+
+*** Activate venv automatically if one exists
+
+As the title says, this will activate a venv if one exists the moment you launch Emacs. If you don't want to, remove this line/comment it out
+
+#+BEGIN_SRC elisp
+  (defun pyenv-activate-current-project ()
+    "Automatically activates pyenv version if .python-version file exists."
+    (interactive)
+    (f-traverse-upwards
+     (lambda (path)
+       (message path)
+       (let ((pyenv-version-path (f-expand ".python-version" path)))
+         (if (f-exists? pyenv-version-path)
+              (let ((pyenv-current-version (s-trim (f-read-text pyenv-version-path 'utf-8))))
+                (pyenv-mode-set pyenv-current-version)
+                (message (concat "Setting virtualenv to " pyenv-current-version))))))))
+#+END_SRC
+
+*** Activate the global version of Python venv instead
+
+#+BEGIN_SRC elisp
+  (defun pyenv-init()
+    "Initialize pyenv's current version to the global one."
+    (let ((global-pyenv (replace-regexp-in-string "\n" "" (shell-command-to-string "pyenv global"))))
+      (message (concat "Setting pyenv version to " global-pyenv))
+      (pyenv-mode-set global-pyenv)
+      (setq pyenv-current-version global-pyenv)))
+
+  (add-hook 'after-init-hook 'pyenv-init)
+#+END_SRC

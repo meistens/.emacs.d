@@ -3,7 +3,7 @@
 ;; python with elpy
 ;;; code:
 
-;; Elpy
+;; elpy
 (use-package elpy
   :ensure t
   :defer t
@@ -13,7 +13,6 @@
   (setq elpy-rpc-python-command "python")
   (setq elpy-rpc-timeout 2)
   (setq elpy-rpc-backend "jedi"))
-;; -Elpy
 
 ;; pyenv-mode
 (use-package pyenv-mode
@@ -26,29 +25,29 @@
   ("C-x p e" . pyenv-activate-current-project))
 
 ;; activate virtualenv if one exists automatically
-(defun pyenv-activate-current-project ()
-  "Automatically activates pyenv version if .python-version file exists."
-  (interactive)
-  (f-traverse-upwards
-   (lambda (path)
-     (message path)
-     (let ((pyenv-version-path (f-expand ".python-version" path)))
-       (if (f-exists? pyenv-version-path)
-            (let ((pyenv-current-version (s-trim (f-read-text pyenv-version-path 'utf-8))))
-              (pyenv-mode-set pyenv-current-version)
-              (message (concat "Setting virtualenv to " pyenv-current-version))))))))
+;; (defun pyenv-activate-current-project ()
+;;   "Automatically activates pyenv version if .python-version file exists."
+;;   (interactive)
+;;   (f-traverse-upwards
+;;    (lambda (path)
+;;      (message path)
+;;      (let ((pyenv-version-path (f-expand ".python-version" path)))
+;;        (if (f-exists? pyenv-version-path)
+;;             (let ((pyenv-current-version (s-trim (f-read-text pyenv-version-path 'utf-8))))
+;;               (pyenv-mode-set pyenv-current-version)
+;;               (message (concat "Setting virtualenv to " pyenv-current-version))))))))
 
-;; activate global version of python
-(defvar pyenv-current-version nil nil)
+;; ;; activate global version of python
+;; ;; (defvar pyenv-current-version nil nil)
 
-(defun pyenv-init()
-  "Initialize pyenv's current version to the global one."
-  (let ((global-pyenv (replace-regexp-in-string "\n" "" (shell-command-to-string "pyenv global"))))
-    (message (concat "Setting pyenv version to " global-pyenv))
-    (pyenv-mode-set global-pyenv)
-    (setq pyenv-current-version global-pyenv)))
+;; (defun pyenv-init()
+;;   "Initialize pyenv's current version to the global one."
+;;   (let ((global-pyenv (replace-regexp-in-string "\n" "" (shell-command-to-string "pyenv global"))))
+;;     (message (concat "Setting pyenv version to " global-pyenv))
+;;     (pyenv-mode-set global-pyenv)
+;;     (setq pyenv-current-version global-pyenv)))
 
-(add-hook 'after-init-hook 'pyenv-init)
+;; (add-hook 'after-init-hook 'pyenv-init)
 
 (provide 'sys-python)
 ;;; sys-python.el ends here
