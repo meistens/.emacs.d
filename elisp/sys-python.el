@@ -13,6 +13,7 @@
   (setq elpy-rpc-python-command "python")
   (setq elpy-rpc-timeout 2)
   (setq elpy-rpc-backend "jedi"))
+;; -elpy
 
 ;; pyenv-mode
 (use-package pyenv-mode
