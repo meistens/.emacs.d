@@ -3,7 +3,7 @@
 ;; python with elpy
 ;;; code:
 
-;; elpy
+;; Elpy
 (use-package elpy
   :ensure t
   :defer t
@@ -13,7 +13,7 @@
   (setq elpy-rpc-python-command "python")
   (setq elpy-rpc-timeout 2)
   (setq elpy-rpc-backend "jedi"))
-;; -elpy
+;; -Elpy
 
 ;; pyenv-mode
 (use-package pyenv-mode

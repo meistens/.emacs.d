@@ -87,4 +87,6 @@ That's just an example, install the version you think that works best for you
    Now that that's out of the way, time to configure Emacs to work with the setup above.
 
 ** Elpy
-#+INCLUDE: "~/.emacs.d/elisp/sys-python.el src emacs-lisp :range-begin "elpy" :range-end "-elpy" :lines "7-15"
+
+Basically, we use elpy as the language server instead of eglot. why? because venv...
+#+INCLUDE: "~/.emacs.d/elisp/sys-python.el src emacs-lisp :range-begin "Elpy" :range-end "-Elpy" :lines "7-15"
