@@ -87,4 +87,4 @@ That's just an example, install the version you think that works best for you
    Now that that's out of the way, time to configure Emacs to work with the setup above.
 
 ** Elpy
-#+INCLUDE: "~/.emacs.d/elisp/sys-python.el src emacs-lisp :range-begin "elpy" :range-end "-elpy" :lines "6-16"
+#+INCLUDE: "~/.emacs.d/elisp/sys-python.el src emacs-lisp :range-begin "elpy" :range-end "-elpy" :lines "7-15"
