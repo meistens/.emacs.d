@@ -36,9 +36,12 @@
 (setq inhibit-compacting-font-caches t)
 
 ;; line numbers
-(global-linum-mode 1)
-(add-hook 'text-mode-hook #'display-line-numbers-mode)
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'text-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+;; wrap texts
+(add-hook 'text-mode-hook 'visual-line-mode)
+(add-hook 'prog-mode-hook 'visual-line-mode)
 
 ;; Display column numbers in modeline
 (column-number-mode 1)
@@ -60,7 +63,7 @@
 ;; fonts setup, change to fit your system
 (set-frame-font "Iosevka Term SS18 Bold Italic" nil t)
 (set-face-attribute 'default nil
-		    :height 120
+		    :height 109
 		    :weight 'bold)
 
 (provide 'sys-UI)

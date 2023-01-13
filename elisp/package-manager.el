@@ -1,6 +1,8 @@
 ;;; package-manager.el --- -*- lexical-binding: t -*-
-;;
-;; credits to matthewzmd
+;;; commentary:
+;; package init site
+;;; code:
+
 ;; package manager init
 (setq package-user-dir (expand-file-name "elpa" user-emacs-directory)
       package-archives
@@ -50,3 +52,4 @@
 (use-package diminish)
 
 (provide 'package-manager)
+;;; package-manager.el ends here

@@ -1,0 +1,90 @@
+#+TITLE:  My Emacs Elisp Configs
+#+AUTHOR:  David Mebo
+#+EMAIL:  mebodave@gmail.com
+#+DATE: [2023-01-13 Fri]
+#+TAGS: emacs python
+
+If you decided to check out this file before cloning this file, good for you!
+If you didn't, guess you know what you're doing then.
+Before we go any further (and a reminder), OS used for this setup is [[https://getfedora.org/][fedora workstation 37]], though it could work on your OS of choice if you know where to get the packages listed to work on your machine.
+
+
+* Python Venv Setup
+Sets up Python and Pyenv use in Emacs using elpy.
+If you wanna see how, check the docs or [[https://rakan.me/emacs/python-dev-with-emacs-and-pyenv/][here]] and [[https://www.tecmint.com/pyenv-install-and-manage-multiple-python-versions-in-linux/][here]] to see how it's done
+
+** Installation
+1. Start by installing the following packages:
+#+BEGIN_SRC sh
+  sudo dnf install pyenv pyenv-virtualenv pyenv-virtualwrapper
+#+END_SRC
+
+Or, clone the following repos:
+
+#+BEGIN_SRC sh
+  git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+  git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+#+END_SRC
+
+2. Install virtualenv globally using pip (ignore the warning about using a virtualenv)
+   
+   #+BEGIN_SRC sh
+     sudo pip install virtualenv
+   #+END_SRC
+
+3. Go to your =.bashrc= file (nano ~/.bashrc or replace nano with Vi/Vim) and paste the following inside of it
+
+   #+BEGIN_SRC sh
+     export PYENV_ROOT="${HOME}/.pyenv"
+          if [ -d "${PYENV_ROOT}" ]; then
+              export PATH="${PYENV_ROOT}/bin:${PATH}"
+              eval "$(pyenv init -)"
+          fi
+   #+END_SRC
+
+4. Save your =.bashrc= file and source the shell by keying
+   
+   #+BEGIN_SRC sh
+     source ~/.bashrc
+   #+END_SRC
+
+   Or restart the shell (used this one, works quite alright)
+
+   #+BEGIN_SRC sh
+     exec "$SHELL"
+   #+END_SRC
+
+** Installing a Python Version
+
+Each project can have its own environment, each environment can have its own version of Python.
+To install a version of python, use the pyenv command (not pip)
+
+   #+BEGIN_SRC sh
+     pyenv install 3.11.1
+   #+END_SRC
+
+That's just an example, install the version you think that works best for you
+
+   To check what version of python you're running;
+   
+   #+BEGIN_SRC sh
+     pyenv versions
+   #+END_SRC
+
+** Creating a Python Environment
+
+ For a new project, create a new environment, and optionally specify the version of Python you want to use. I'll advise you to have a dedicated folder/directory if you plan on using a particular version of Python to run a project.
+
+   #+BEGIN_SRC sh
+     pyenv global 3.4.2       # Set the version on a global scale
+     pyenv local 3.11.1@foo   # Alternatively, setup a local environment for
+                              # version 3.11.1
+     pyenv virtualenv foo     # Create environment
+     pyenv activate foo       # Use environment
+     pyenv deactivate         # Deactivate virtual environment
+   #+END_SRC
+
+   Now that that's out of the way, time to configure Emacs to work with the setup above.
+
+** Elpy
+#+INCLUDE: "~/.emacs.d/elisp/sys-python.el src emacs-lisp :lines "7-15"

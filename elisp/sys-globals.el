@@ -45,9 +45,9 @@
   (ivy-wrap t)
   :config
   (defun counsel-goto-local-home ()
-      "Go to the $HOME of the local machine."
-      (interactive)
-      (ivy--cd "~/")))
+    "Go to the $HOME of the local machine."
+    (interactive)
+    (ivy--cd "~/")))
 
 ;; color rg, make sure ripgrep is installed in PATH
 (use-package color-rg
