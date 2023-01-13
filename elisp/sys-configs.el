@@ -1,5 +1,6 @@
 ;;; sys-configs.el --- -*- lexical-binding: t -*-
 ;;; commentary:
+;; contains some configs applied to Emacs
 ;;; code:
 
 ;; UTF-8
@@ -43,19 +44,40 @@
 ;; Don't Lock Files
 (setq-default create-lockfiles nil)
 
-;; Better Compilation
-(setq-default compilation-always-kill t) ; kill compilation process before
-;; starting another
+;; kill compilation process before starting another
+(setq-default compilation-always-kill t)
 
-(setq-default compilation-ask-about-save nil) ; save all buffers on `compile'
+;; save all buffers on `compile'
+(setq-default compilation-ask-about-save nil)
 
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit) ;; make ESC key quit
-;; in place of C-g
+;; ESC now in place of C-g
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+;; scroll while compiling
 (setq-default compilation-scroll-output t)
 
 ;; Add a newline automatically at the end of the file upon save.
 (setq require-final-newline t)
+
+;; scroll setup
+(setq scroll-conservatively 10000
+      scroll-preserve-screen-position t
+      mouse-wheel-progressive-speed nil
+      mouse-wheel-scroll-amount '(1 ((shift) . 1))
+      fast-but-imprecise-scrolling nil
+      scroll-up-aggressively 0.01
+      scroll-down-aggressively 0.01
+      scroll-margin 1
+      scroll-step 1
+      hscroll-margin 1
+      hscroll-step 1)
+
+;; highlight line mode
+(global-hl-line-mode 1)
+
+;; yes/no? more like y/n
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq use-dialog-box nil)
 
 (provide 'sys-configs)
 ;;; sys-configs.el ends here

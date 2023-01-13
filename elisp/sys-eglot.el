@@ -1,5 +1,7 @@
 ;;; sys-eglot.el --- -*- lexical-binding: t -*-
 ;;; commentary:
+;; server for C, Js and Ts.  To add more, swap out/use existing setup to
+;; configure yours
 ;;; code:
 
 ;; eglot

@@ -1,5 +1,6 @@
 ;;; sys-UI.el --- -*- lexical-binding: t -*-
 ;;; commentary:
+;; Emacs UI, gotta look nice though
 ;;; code:
 
 ;; doom-theme
@@ -34,38 +35,16 @@
 (setq doom-modeline-env-load-string "be patient...")
 (setq inhibit-compacting-font-caches t)
 
-;; Vertical Scroll
-(setq scroll-step 1)
-(setq scroll-margin 1)
-(setq scroll-conservatively 101)
-(setq scroll-up-aggressively 0.01)
-(setq scroll-down-aggressively 0.01)
-(setq auto-window-vscroll nil)
-(setq fast-but-imprecise-scrolling nil)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
-(setq mouse-wheel-progressive-speed nil)
-
-;; Horizontal Scroll
-(setq hscroll-step 1)
-(setq hscroll-margin 1)
-
-;; highlight line mode
-(global-hl-line-mode 1)
-
-;; yes/no? more like y/n
-(fset 'yes-or-no-p 'y-or-n-p)
-(setq use-dialog-box nil)
-
 ;; line numbers
-(if (version< emacs-version "26")
-    (global-linum-mode)
-  (add-hook 'text-mode-hook #'display-line-numbers-mode)
-  (add-hook 'prog-mode-hook #'display-line-numbers-mode))
+(global-linum-mode 1)
+(add-hook 'text-mode-hook #'display-line-numbers-mode)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
 ;; Display column numbers in modeline
 (column-number-mode 1)
 
 ;; Depressing scratch board no more depressing (or is it still?)
+;; edit to taste
 (setq inhibit-startup-screen t)
 (setq initial-major-mode 'text-mode)
 (setq initial-scratch-message "Back to work or cry meistens?\n")
@@ -78,26 +57,11 @@
 ;; displays a panel for commands keyed in
 (use-package command-log-mode)
 
-;; fonts setup for windows, linux and macOS
-(pcase system-type
-  ((or 'gnu/linux 'windows-nt)
-   (set-face-attribute 'default nil
-		       :font "Iosevka Term SS18"
-		       :weight 'regular
-		       :height (dm/system-settings-get 'emacs/default-face-size)))
-  ('darwin (set-face-attribute 'default nil :font "Iosevka Term SS18" :height 170)))
+;; fonts setup, change to fit your system
+(set-frame-font "Iosevka Term SS18 Bold Italic" nil t)
+(set-face-attribute 'default nil
+		    :height 120
+		    :weight 'bold)
 
-;; fixed pitch face
-(set-face-attribute 'fixed-pitch nil
-		    :font "Iosevka Term SS18"
-		    :weight 'regular
-		    :height (dm/system-settings-get 'emacs/fixed-face-size))
-
-;; variable pitch face
-(set-face-attribute 'variable-pitch nil
-		    :font "Iosevka Term SS18"
-		    :height (dm/system-settings-get 'emacs/variable-face-size)
-		    :weight 'regular)
-
-   (provide 'sys-UI)
+(provide 'sys-UI)
 ;;; sys-UI.el ends here
