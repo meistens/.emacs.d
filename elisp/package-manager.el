@@ -1,6 +1,6 @@
 ;;; package-manager.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; package init site
+;; package init fille
 ;;; code:
 
 ;; package manager init

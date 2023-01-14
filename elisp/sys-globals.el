@@ -7,18 +7,6 @@
 ;; (setq user-full-name "David Mebo")
 ;; (setq user-mail-address "mebodave@gmail.com")
 
-;; Unbind unneeded keys
-(global-set-key (kbd "C-z") nil)
-(global-set-key (kbd "M-z") nil)
-(global-set-key (kbd "M-m") nil)
-(global-set-key (kbd "C-x C-z") nil)
-(global-set-key (kbd "M-/") nil)
-;; Truncate lines
-(global-set-key (kbd "C-x C-l") #'toggle-truncate-lines)
-;; Move up/down paragraph
-(global-set-key (kbd "M-n") #'forward-paragraph)
-(global-set-key (kbd "M-p") #'backward-paragraph)
-
 ;; ivy, amx, counsel, swiper
 (use-package ivy
   :diminish
@@ -29,9 +17,6 @@
   (ivy-mode 1)
   :bind
   (("C-s" . swiper-isearch)
-   ("C-z s" . counsel-rg)
-   ("C-z b" . counsel-buffer-or-recentf)
-   ("C-z C-b" . counsel-ibuffer)
    (:map ivy-minibuffer-map
          ("M-RET" . ivy-immediate-done))
    (:map counsel-find-file-map
@@ -87,6 +72,7 @@
       '((".*" . "~/.Trash")))
 ;; tramp
 (setq tramp-backup-directory-alist backup-directory-alist)
+
 ;; any vc files
 (setq vc-make-backup-files t)
 

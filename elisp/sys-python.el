@@ -1,6 +1,6 @@
 ;;; sys-python.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; python with elpy
+;; python with elpy, venv and related setups that makes Python Python
 ;;; code:
 
 ;; elpy

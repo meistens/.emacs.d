@@ -79,5 +79,16 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq use-dialog-box nil)
 
+;; Unbind unneeded keys
+(global-set-key (kbd "M-z") nil)
+(global-set-key (kbd "M-m") nil)
+(global-set-key (kbd "C-x C-z") nil)
+(global-set-key (kbd "M-/") nil)
+;; Truncate lines
+(global-set-key (kbd "C-x C-l") #'toggle-truncate-lines)
+;; Move up/down paragraph
+(global-set-key (kbd "M-n") #'forward-paragraph)
+(global-set-key (kbd "M-p") #'backward-paragraph)
+
 (provide 'sys-configs)
 ;;; sys-configs.el ends here

@@ -66,5 +66,32 @@
 		    :height 109
 		    :weight 'bold)
 
+;; ace-window
+(use-package ace-window
+  :bind ("M-o" . ace-window))
+
+;; Focus on split window
+(defun split-and-follow-horizontally ()
+  "Focus on split window."
+  (interactive)
+  (split-window-below)
+  (balance-windows)
+  (other-window 1))
+(global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
+
+(defun split-and-follow-vertically ()
+  "Focus on split window."
+  (interactive)
+  (split-window-right)
+  (balance-windows)
+  (other-window 1))
+(global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+
+;; kill buffer without asking for confirmation
+(setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
+
+;; make ibuffer default
+(global-set-key (kbd "C-x b") 'ibuffer)
+
 (provide 'sys-UI)
 ;;; sys-UI.el ends here

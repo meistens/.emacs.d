@@ -1,11 +1,16 @@
-* Docs is a work in progress
-** It will contain my progress so far and yep, credits will be given (couldn't have done it without looking at their configs and emacswiki too)
-*** Why this long to figure stuff out? What if i told you i botched up my setup trying to be unique (realized after trying and failing to get Org to work)
+* My Personal Emacs Config File
 
-Ah well, once I'm done, i'll be cleaning up the code and other stuff... time to get serious y'all
+This is the setup I use in my day-to-day use of Emacs. Check out the elisp folder to take a peek at my configs.
 
-Notes:
-- vterm setup, eshell is not a proper shell per se (am i right?), shell is not what I wanna use
-- Org setup
-- Dashboard (maybe... or not, scratch looks nice)
-- More tweaks to make things better (next line after 80 char met on current frame, keep same frame size,...)
+Tested with the following;
+OS: Fedora Workstation 37 with GNOME
+Emacs Version: 28.2
+
+If you're trying to clone and use on a windows system, best you watch out for doom-modeline. Last time I tried to on a windows system, doom-modeline crashed Emacs, not sure if its different now.
+
+** Credits (would still be scratching my head wondering why Emacs kept freezing without looking at their configs)
+ [[https://github.com/howardabrams/dot-files][howardabrams]]
+[[https://github.com/MatthewZMD/.emacs.d#orga2c774b][matthewzmd]]
+[[https://github.com/daedreth/UncleDavesEmacs/blob/master/config.org][uncledavesemacs
+]][[http://www.xahlee.info/][Xahlee blogs]]
+[[https://duckduckgo.com/?q=emacswiki&t=ffab&atb=v359-2vb&ia=web][emacswiki]]
