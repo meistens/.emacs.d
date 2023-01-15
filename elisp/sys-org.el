@@ -8,6 +8,7 @@
 
 ;; indents and auto-fill for org files
 (defun dm/org-mode-setup ()
+  "Org indent, pitch and fill-mode."
   (org-indent-mode)
   (variable-pitch-mode 1)
   (auto-fill-mode 0))
@@ -65,12 +66,23 @@
 
   ;; org tempo
   (require 'org-tempo)
-
   (add-to-list 'org-structure-template-alist '("sh" . "src sh"))
   (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
   (add-to-list 'org-structure-template-alist '("ts" . "src typescript"))
   (add-to-list 'org-structure-template-alist '("py" . "src python"))
   (add-to-list 'org-structure-template-alist '("json" . "src json"))
+
+(dolist (face '((org-level-1 . 1.5)
+                (org-level-2 . 1.4)
+                (org-level-3 . 1.3)
+                (org-level-4 . 1.2)
+                (org-level-5 . 1.1)
+                (org-level-6 . 1.0)
+                (org-level-7 . 1.0)
+                (org-level-8 . 1.0)))
+  (set-face-attribute (car face) nil :font "Vazirmatn" :weight 'medium :height (cdr face)))
+
+
 
   ;; org appear
   (use-package org-appear

@@ -53,7 +53,7 @@
 (setq initial-scratch-message "Back to work or cry meistens?\n")
 
 ;; 1920px without affecting company box, edit the values to suit your screen
-(if (window-system) (set-frame-size (selected-frame) 90 30))
+(if (window-system) (set-frame-size (selected-frame) 90 35))
 
 ;; split frame size
 (setq default-frame-alist '((width . 85) (height . 35)))
@@ -64,12 +64,19 @@
 ;; fonts setup, change to fit your system
 (set-frame-font "Iosevka Term SS18 Bold Italic" nil t)
 (set-face-attribute 'default nil
-		    :height 150
+		    :height 140
 		    :weight 'bold)
 
+;; mode-line font
 (set-face-attribute 'mode-line nil
 		    :font "Comfortaa Light"
 		    :height 150)
+
+;; frame scaling/zooming
+;; (use-package default-text-scale
+;;   :defer 1
+;;   :config
+;;   (default-text-scale-mode))
 
 ;; ace-window
 (use-package ace-window
