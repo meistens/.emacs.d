@@ -90,5 +90,8 @@
 (global-set-key (kbd "M-n") #'forward-paragraph)
 (global-set-key (kbd "M-p") #'backward-paragraph)
 
+;; hide mouse when typing
+(setq make-pointer-invisible t)
+
 (provide 'sys-configs)
 ;;; sys-configs.el ends here

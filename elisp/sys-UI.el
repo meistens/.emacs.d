@@ -53,9 +53,10 @@
 (setq initial-scratch-message "Back to work or cry meistens?\n")
 
 ;; 1920px without affecting company box, edit the values to suit your screen
-;; same rule does not apply to frames created (C-x 5 [insert number])
-;; guess i'll dig around and put together a function for that
-(if (window-system) (set-frame-size (selected-frame) 120 40))
+(if (window-system) (set-frame-size (selected-frame) 90 30))
+
+;; split frame size
+(setq default-frame-alist '((width . 85) (height . 35)))
 
 ;; displays a panel for commands keyed in
 (use-package command-log-mode)
@@ -63,8 +64,12 @@
 ;; fonts setup, change to fit your system
 (set-frame-font "Iosevka Term SS18 Bold Italic" nil t)
 (set-face-attribute 'default nil
-		    :height 109
+		    :height 150
 		    :weight 'bold)
+
+(set-face-attribute 'mode-line nil
+		    :font "Comfortaa Light"
+		    :height 150)
 
 ;; ace-window
 (use-package ace-window
