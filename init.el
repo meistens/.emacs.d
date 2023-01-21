@@ -79,21 +79,19 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; org
 (require 'sys-org)
 
+(provide 'init)
+;;; init.el ends here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-show-quick-access t nil nil "Customized with use-package company")
  '(package-selected-packages
-   '(ace-window org-appear org-superstar pyenv-mode command-log-mode elpy org-bullets flyspell-correct-ivy tide typescript-mode web-mode company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
- '(warning-suppress-types '((comp) (comp) (comp) (comp))))
+   '(org-appear org-superstar pyenv-mode elpy company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot ace-window command-log-mode doom-modeline all-the-icons doom-themes diminish auto-package-update use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(provide 'init)
-;;; init.el ends here
 (put 'dired-find-alternate-file 'disabled nil)

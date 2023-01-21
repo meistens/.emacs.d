@@ -58,6 +58,10 @@
 ;; split frame size
 (setq default-frame-alist '((width . 85) (height . 35)))
 
+;; frame transparency
+(set-frame-parameter (selected-frame) 'alpha '(80 . 80))
+(add-to-list 'default-frame-alist '(alpha . (80 . 80)))
+
 ;; displays a panel for commands keyed in
 (use-package command-log-mode)
 

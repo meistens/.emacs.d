@@ -8,6 +8,8 @@ If you decided to check out this file before cloning this file, good for you!
 If you didn't, guess you know what you're doing then.
 Before we go any further (and a reminder), OS used for this setup is [[https://getfedora.org/][fedora workstation 37]], though it could work on your OS of choice if you know where to get the packages listed to work on your machine. Also documentation is a bit messy, will clean em up in the future (why not now? ... time and prolly because its not meant to be the best configuration ever...)
 
+Note: Best you check the files in question, changes made might not be documented on this README. 
+
 * Package manager
 
 Initialize package manager, setup here uses  [[https://elpa.gnu.org/packages][Elpa]], [[https://melpa.org/packages/][Melpa]] and [[https://Orgmode.org/elpa/][Org]]
