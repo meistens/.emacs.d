@@ -799,7 +799,7 @@ If you wanna see how, check the docs or [[https://rakan.me/emacs/python-dev-with
 1. Start by installing the following packages:
    
 #+BEGIN_SRC sh
-  sudo dnf install pyenv pyenv-virtualenv pyenv-virtualwrapper
+  pip install pyenv pyenv-virtualenv pyenv-virtualwrapper
 #+END_SRC
 
 Or, clone the following repos:
@@ -860,7 +860,7 @@ That's just an example, install the version you think that works best for you
 
    #+BEGIN_SRC sh
      pyenv global 3.4.2       # Set the version on a global scale
-     pyenv local 3.11.1@foo   # Alternatively, setup a local environment for
+     pyenv local 3.11.1@foo   # Alternatively, setup a local environment
                               # version 3.11.1
      pyenv virtualenv foo     # Create environment
      pyenv activate foo       # Use environment
@@ -951,6 +951,7 @@ Minimal configuration for ansi-term, key point is you can paste to it, still loo
         (kill-line))))
   (add-hook 'term-mode-hook 'my-term-mode-hook)
 #+END_SRC
+
 * UI
 
 Some UI enhancemets
