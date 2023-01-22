@@ -88,5 +88,15 @@
   (use-package org-appear
     :hook (org-mode . org-appear-mode))
 
+;; Org title script
+(defun dm/my-org-template ()
+  "Insert a template for an org file with a title, author, email, current date and tags."
+  (interactive)
+  (insert (concat "#+TITLE: My Org File\n#+AUTHOR: David Mebo\n#+EMAIL: mebodave@gmail.com\n#+DATE: " (format-time-string "%Y-%m-%d") "\n#+TAGS: \n\n")))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c C-=") 'dm/my-org-template)))
+
   (provide 'sys-org)
 ;;; sys-org.el ends here
