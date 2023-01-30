@@ -1,3 +1,7 @@
 [submodule "site-elisp/color-rg"]
     path = site-elisp/color-rg
     url = https://github.com/manateelazycat/color-rg.git
+
+[submodule "site-elisp/ligature.el"]
+    path = site-elisp/ligature.el
+    url = https://github.com/mickeynp/ligature.el.git
