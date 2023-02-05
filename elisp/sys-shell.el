@@ -226,5 +226,21 @@ directory to make multiple eshell windows easier."
 ;; tramp
 (setq tramp-default-method "ssh")
 
+;; ShellCheck
+(flycheck-define-checker shellcheck
+  "Shell script syntax checker"
+  :command ("shellcheck" source)
+  :error-patterns
+  ((warning line-start
+	    (file-name) ":" line ":" (optional column ":") " warning: " (message)
+	    line-end)
+   (error line-start
+	  (file-name) ":" line ":" (optional column ":") " error: " (message)
+	  line-end))
+  :modes sh-mode)
+
+(add-to-list 'flycheck-checkers 'shellcheck)
+(add-hook 'sh-mode-hook (lambda () (flycheck-mode 1)))
+
 (provide 'sys-shell)
 ;;; sys-shell.el ends here
