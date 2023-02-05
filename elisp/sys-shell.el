@@ -241,6 +241,6 @@ directory to make multiple eshell windows easier."
 
 (add-to-list 'flycheck-checkers 'shellcheck)
 (add-hook 'sh-mode-hook (lambda () (flycheck-mode 1)))
-
+ 
 (provide 'sys-shell)
 ;;; sys-shell.el ends here

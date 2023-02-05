@@ -429,5 +429,20 @@ If all failed, try to complete the common part with `company-complete-common'"
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
+;; shebangs for programming modes
+(defun dm/shebang-and-rev-buffer ()
+  "Add a shebang at the top of the file and reverts buffer."
+  (interactive)
+  (goto-char (point-min))
+  (let ((shebang (cond ((equal major-mode 'sh-mode) "#!/usr/bin/env bash\n")
+		      ((equal major-mode 'python-mode) "#!/usr/bin/env python3\n")
+		       (t nil))))
+       (when shebang
+	 (insert shebang))
+       (revert-buffer t t)))
+
+;; shebang kbd
+(global-set-key (kbd "C-c s") 'dm/shebang-and-rev-buffer)
+
 (provide 'sys-progs)
 ;;; sys-progs.el ends here
