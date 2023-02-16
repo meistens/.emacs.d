@@ -1049,3 +1049,6 @@ Some UI enhancemets
   ;; make ibuffer default
   (global-set-key (kbd "C-x b") 'ibuffer)
 #+END_SRC
+
+* SQL
+SQL configuration
