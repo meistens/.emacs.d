@@ -79,6 +79,15 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; org
 (require 'sys-org)
 
+;; HTML, CSS, liveserver
+(require 'sys-web)
+
+;; Js/Ts
+(require 'sys-typescript)
+
+;; keybinds
+(load "sys-keybinds")
+
 (provide 'init)
 ;;; init.el ends here
 (custom-set-variables
@@ -86,8 +95,9 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-show-quick-access t nil nil "Customized with use-package company")
  '(package-selected-packages
-   '(org-appear org-superstar pyenv-mode elpy company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot ace-window command-log-mode doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
+   '(tide typescript-mode skewer-mode css emmet-mode web-mode org-appear org-superstar pyenv-mode elpy company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot ace-window command-log-mode doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
  '(warning-suppress-types '((comp) (comp) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
