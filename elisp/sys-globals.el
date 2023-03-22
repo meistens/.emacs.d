@@ -76,5 +76,19 @@
 ;; any vc files
 (setq vc-make-backup-files t)
 
+;; tree-sitter global configs
+
+;; tree-sitter langs
+(use-package tree-sitter-langs
+  :ensure t
+  :after tree-sitter)
+
+;; tree-sitter
+(use-package tree-sitter
+  :ensure t
+  :config
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
+
 (provide 'sys-globals)
 ;;; sys-globals.el ends here
