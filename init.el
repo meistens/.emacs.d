@@ -82,8 +82,11 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
 ;; HTML, CSS, liveserver
 (require 'sys-web)
 
-;; Js/Ts
+;; TypeScript
 (require 'sys-typescript)
+
+;; JavaScript
+(require 'sys-javascript)
 
 ;; keybinds
 (load "sys-keybinds")
@@ -97,7 +100,7 @@ If you experience freezing, decrease this.  If you experience stuttering, increa
  ;; If there is more than one, they won't work right.
  '(company-show-quick-access t nil nil "Customized with use-package company")
  '(package-selected-packages
-   '(tide typescript-mode skewer-mode css emmet-mode web-mode org-appear org-superstar pyenv-mode elpy company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot ace-window command-log-mode doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
+   '(tree-sitter-langs tide typescript-mode skewer-mode css emmet-mode web-mode org-appear org-superstar pyenv-mode elpy company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot ace-window command-log-mode doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
  '(warning-suppress-types '((comp) (comp) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

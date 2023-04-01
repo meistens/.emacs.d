@@ -445,5 +445,11 @@ If all failed, try to complete the common part with `company-complete-common'"
 ;; shebang kbd
 (global-set-key (kbd "C-c s") 'dm/shebang-and-rev-buffer)
 
+;; tabs
+(setq c-default-style "bsd"
+      c-basic-offset 8
+      tab-width 8
+      indent-tabs-mode t)
+
 (provide 'sys-progs)
 ;;; sys-progs.el ends here

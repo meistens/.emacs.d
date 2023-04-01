@@ -193,9 +193,7 @@ directory to make multiple eshell windows easier."
 (bind-key "C-e" 'eshell-here)
 
 (defun eshell-here ()
-  "Opens up a new shell in the directory associated with the
-    current buffer's file. The eshell is renamed to match that
-    directory to make multiple eshell windows easier."
+  "Opens up a new shell in the directory associated with the current buffer's file.  The eshell is renamed to match that directory to make multiple eshell windows easier."
   (interactive)
   (let* ((height (/ (window-total-height) 3)))
     (split-window-vertically (- height))
