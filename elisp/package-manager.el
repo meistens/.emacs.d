@@ -1,6 +1,7 @@
 ;;; package-manager.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; package init fille
+;; package init file, ensures the package repository needed to install packages
+;; are installed and initialized
 ;;; code:
 
 ;; package manager init
@@ -42,7 +43,7 @@
 (use-package auto-package-update
   :if (not (daemonp))
   :custom
-  (auto-package-update-interval 7) ;; in days
+  (auto-package-update-interval 14) ;; in days
   (auto-package-update-prompt-before-update t)
   (auto-package-update-delete-old-versions t)
   (auto-package-update-hide-results t)
