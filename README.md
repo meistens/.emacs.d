@@ -28,7 +28,9 @@ TBA
 
 Ubuntu 22.04 LTS
 Emacs Version: 27 (apt-get, did not start with ubuntu)
-Works (comment/remove ligature.el submodule, it does not work)
+Note:
+comment/remove/modify ligatures.el, version has a bug
+python mode not configuration does not load (use exec-path-from-shell to setup)
 
 Windows 10/11
 Emacs Version: 27
@@ -41,6 +43,6 @@ Note:
 
 -
 
-## Packages/Libs/Fonts To Install
+## Packages/Libs/Fonts To Install To Ensure Everything Works
 - Iosevka Term SS18 fonts (Bold Italic), used elsewhere but the modeline
 - Comfortaa (Light) font, modeline font
