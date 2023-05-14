@@ -8,31 +8,62 @@
 ;; (setq user-mail-address "mebodave@gmail.com")
 
 ;; ivy, amx, counsel, swiper
-(use-package ivy
-  :diminish
+;; (use-package ivy
+  ;; :diminish
+  ;; :init
+  ;; (use-package amx :defer t)
+  ;; (use-package counsel :diminish :config (counsel-mode 1))
+  ;; (use-package swiper :defer t)
+  ;; (ivy-mode 1)
+  ;; :bind
+  ;; (("C-s" . swiper-isearch)
+  ;;  (:map ivy-minibuffer-map
+  ;;        ("M-RET" . ivy-immediate-done))
+  ;;  (:map counsel-find-file-map
+  ;;        ("C-~" . counsel-goto-local-home)))
+  ;; :custom
+  ;; (ivy-use-virtual-buffers t)
+  ;; (ivy-height 10)
+  ;; (ivy-on-del-error-function nil)
+  ;; (ivy-magic-slash-non-match-action 'ivy-magic-slash-non-match-create)
+  ;; (ivy-count-format "【%d/%d】")
+  ;; (ivy-wrap t)
+  ;; :config
+  ;; (defun counsel-goto-local-home ()
+  ;;   "Go to the $HOME of the local machine."
+  ;;   (interactive)
+  ;;   (ivy--cd "~/")))
+;; vertico
+(use-package vertico
   :init
-  (use-package amx :defer t)
-  (use-package counsel :diminish :config (counsel-mode 1))
-  (use-package swiper :defer t)
-  (ivy-mode 1)
-  :bind
-  (("C-s" . swiper-isearch)
-   (:map ivy-minibuffer-map
-         ("M-RET" . ivy-immediate-done))
-   (:map counsel-find-file-map
-         ("C-~" . counsel-goto-local-home)))
-  :custom
-  (ivy-use-virtual-buffers t)
-  (ivy-height 10)
-  (ivy-on-del-error-function nil)
-  (ivy-magic-slash-non-match-action 'ivy-magic-slash-non-match-create)
-  (ivy-count-format "【%d/%d】")
-  (ivy-wrap t)
-  :config
-  (defun counsel-goto-local-home ()
-    "Go to the $HOME of the local machine."
-    (interactive)
-    (ivy--cd "~/")))
+  (vertico-mode)
+  (setq vertico-resize t))
+
+;; persist vertico history, goes with vertico
+(use-package savehist
+  :init
+  (savehist-mode))
+
+;; more vertico configs
+(use-package emacs
+  :init
+  (defun crm-indicator (args)
+    (cons (format "[CRM%s] %s"
+		  (replace-regexp-in-string
+		   "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
+		   crm-separator)
+		  (car args))
+	 (cdr args)))
+(advice-add #'completing-read-multiple :filter-args #'crm-indicator)
+
+;; do not allow cursor in the minibuffer
+(setq minibuffer-prompt-properties
+      '(read-only t cursor-intangible t face minibuffer-prompt))
+(add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+
+;; enable recursive minibuffers
+(setq enable-recursive-minibuffers t))
+
 
 ;; color rg, make sure ripgrep is installed in PATH
 (use-package color-rg

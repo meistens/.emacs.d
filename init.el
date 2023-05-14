@@ -21,16 +21,10 @@
 (require 'sys-globals)
 
 ;; some configs
-(require 'sys-configs)
+(require 'sys-settings)
 
 ;; programming tools
 (require 'sys-progs)
-
-;; typescript only
-;; (require 'sys-typescript)
-
-;; python only
-(require 'sys-python)
 
 ;; org
 (require 'sys-org)
@@ -39,10 +33,10 @@
 (require 'sys-web)
 
 ;; TypeScript
-(require 'sys-typescript)
+;;(require 'sys-typescript)
 
 ;; JavaScript
-(require 'sys-javascript)
+;;(require 'sys-javascript)
 
 ;; keybinds
 (load "sys-keybinds")
@@ -56,7 +50,7 @@
  ;; If there is more than one, they won't work right.
  '(company-show-quick-access t nil nil "Customized with use-package company")
  '(package-selected-packages
-   '(tree-sitter-langs tide typescript-mode skewer-mode css emmet-mode web-mode org-appear org-superstar pyenv-mode elpy company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot ace-window command-log-mode doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
+   '(vertico tree-sitter-langs tide typescript-mode skewer-mode css emmet-mode web-mode org-appear org-superstar pyenv-mode elpy company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot ace-window command-log-mode doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
  '(warning-suppress-types '((comp) (comp) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
