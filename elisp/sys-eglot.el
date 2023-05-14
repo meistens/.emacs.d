@@ -22,6 +22,7 @@
 ;; Detect Venv automatically, not gonna go through the trouble of doing
 ;; a separate setup...
 (defun eglot-detect-virtualenv ()
+  "Detects if a virtaul environment (venv) is activated for Python."
   (let* ((venv-dir-name "env")
 	 (venv-bin-dir (locate-dominating-file default-directory venv-dir-name)))
     (when venv-bin-dir
