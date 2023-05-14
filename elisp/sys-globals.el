@@ -3,36 +3,6 @@
 ;; some misc stuff, should be in sys-configs, ah well...
 ;;; code:
 
-;; Basic info
-;; (setq user-full-name "David Mebo")
-;; (setq user-mail-address "mebodave@gmail.com")
-
-;; ivy, amx, counsel, swiper
-;; (use-package ivy
-  ;; :diminish
-  ;; :init
-  ;; (use-package amx :defer t)
-  ;; (use-package counsel :diminish :config (counsel-mode 1))
-  ;; (use-package swiper :defer t)
-  ;; (ivy-mode 1)
-  ;; :bind
-  ;; (("C-s" . swiper-isearch)
-  ;;  (:map ivy-minibuffer-map
-  ;;        ("M-RET" . ivy-immediate-done))
-  ;;  (:map counsel-find-file-map
-  ;;        ("C-~" . counsel-goto-local-home)))
-  ;; :custom
-  ;; (ivy-use-virtual-buffers t)
-  ;; (ivy-height 10)
-  ;; (ivy-on-del-error-function nil)
-  ;; (ivy-magic-slash-non-match-action 'ivy-magic-slash-non-match-create)
-  ;; (ivy-count-format "【%d/%d】")
-  ;; (ivy-wrap t)
-  ;; :config
-  ;; (defun counsel-goto-local-home ()
-  ;;   "Go to the $HOME of the local machine."
-  ;;   (interactive)
-  ;;   (ivy--cd "~/")))
 ;; vertico
 (use-package vertico
   :init
@@ -174,6 +144,24 @@
   (setq consult-narrow-key "<") ;; "C-+"
   )
 
+;; all-the-icons-completion (uncomment, and download this one if you want)
+;; (require 'all-the-icons-completion)
+;; (all-the-icons-completion-mode)
+
+;; marginalia setup
+(use-package marginalia
+  :init
+  :bind (("M-A" . marginalia-cycle)
+	 :map minibuffer-local-map
+	 ("M-A" . marginalia-cycle))
+  :init
+  (marginalia-mode))
+
+;; nerd-fonts icons (comment out if you prefer all-the-icons-completion)
+(use-package nerd-icons-completion
+  :config
+  (nerd-icons-completion-mode))
+
 ;; color rg, make sure ripgrep is installed in PATH
 (use-package color-rg
   :load-path (lambda () (expand-file-name "site-elisp/color-rg" user-emacs-directory))
@@ -210,14 +198,11 @@
 ;; trash backup files
 (setq backup-directory-alist
       '((".*" . "~/.Trash")))
-;; tramp
-(setq tramp-backup-directory-alist backup-directory-alist)
 
 ;; any vc files
 (setq vc-make-backup-files t)
 
 ;; tree-sitter global configs
-
 ;; tree-sitter langs
 (use-package tree-sitter-langs
   :ensure t
