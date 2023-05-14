@@ -36,7 +36,7 @@
 ;;(require 'sys-typescript)
 
 ;; JavaScript
-;;(require 'sys-javascript)
+(require 'sys-javascript)
 
 ;; keybinds
 (load "sys-keybinds")
