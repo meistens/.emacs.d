@@ -50,9 +50,6 @@
 ;; save all buffers on `compile'
 (setq-default compilation-ask-about-save nil)
 
-;; ESC now in place of C-g
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
 ;; scroll while compiling
 (setq-default compilation-scroll-output t)
 
@@ -82,5 +79,5 @@
 ;; hide mouse when typing
 (setq make-pointer-invisible t)
 
-(provide 'sys-configs)
+(provide 'sys-settings)
 ;;; sys-settings.el ends here

@@ -24,7 +24,7 @@
 (require 'sys-settings)
 
 ;; programming tools
-(require 'sys-progs)
+;; (require 'sys-progs)
 
 ;; org
 (require 'sys-org)
@@ -33,7 +33,7 @@
 (require 'sys-web)
 
 ;; TypeScript
-;;(require 'sys-typescript)
+(require 'sys-typescript)
 
 ;; JavaScript
 (require 'sys-javascript)
@@ -48,14 +48,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-show-quick-access t nil nil "Customized with use-package company")
  '(package-selected-packages
-   '(vertico tree-sitter-langs tide typescript-mode skewer-mode css emmet-mode web-mode org-appear org-superstar pyenv-mode elpy company-box company evil-nerd-commenter format-all highlight-indent-guides smartparens flycheck-popup-tip flycheck-posframe flycheck yasnippet-snippets yasnippet projectile undo-tree popup-kill-ring which-key disk-usage counsel amx ivy eglot ace-window command-log-mode doom-modeline all-the-icons doom-themes diminish auto-package-update use-package))
- '(warning-suppress-types '((comp) (comp) (comp))))
+   '(company-box company cape yasnippet-snippets which-key web-mode vertico use-package undo-tree typescript-mode smartparens rainbow-mode projectile popup-kill-ring org-superstar org-appear orderless nerd-icons-completion marginalia kind-icon js2-mode impatient-mode highlight-indent-guides format-all flycheck-posframe flycheck-popup-tip evil-nerd-commenter eglot doom-themes doom-modeline disk-usage diminish corfu consult command-log-mode auto-package-update all-the-icons ace-window)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(put 'dired-find-alternate-file 'disabled nil)

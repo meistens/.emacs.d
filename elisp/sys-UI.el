@@ -22,18 +22,18 @@
 ;; run M-x all-the-icons-install-fonts <RET> (same as enter key)
 
 ;; doom-modeline
-(use-package doom-modeline
-  :ensure t
-  :hook (after-init . doom-modeline-mode))
-(setq doom-modeline-height 20)
-(setq doom-modeline-bar-width 4)
-(setq doom-modeline-icon t)
-(setq doom-modeline-major-mode-icon t)
-(setq doom-modeline-major-mode-color-icon t)
-(setq doom-modeline-buffer-state-icon t)
-(setq doom-modeline-buffer-modification-icon t)
-(setq doom-modeline-env-load-string "be patient...")
-(setq inhibit-compacting-font-caches t)
+;; (use-package doom-modeline
+;;   :ensure t
+;;   :hook (after-init . doom-modeline-mode))
+;; (setq doom-modeline-height 20)
+;; (setq doom-modeline-bar-width 4)
+;; (setq doom-modeline-icon t)
+;; (setq doom-modeline-major-mode-icon t)
+;; (setq doom-modeline-major-mode-color-icon t)
+;; (setq doom-modeline-buffer-state-icon t)
+;; (setq doom-modeline-buffer-modification-icon t)
+;; (setq doom-modeline-env-load-string "be patient...")
+;; (setq inhibit-compacting-font-caches t)
 
 ;; line numbers
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
@@ -66,10 +66,10 @@
 (use-package command-log-mode)
 
 ;; fonts setup, change to fit your system
-(set-frame-font "Iosevka Term SS18 Bold Italic" nil t)
-(set-face-attribute 'default nil
-		    :height 140
-		    :weight 'bold)
+;;(set-frame-font "Iosevka Nerd Bold Italic" nil t)
+;;(set-face-attribute 'default nil
+;;		    :height 140
+;;		    :weight 'bold)
 
 ;; mode-line font
 (set-face-attribute 'mode-line nil

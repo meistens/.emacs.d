@@ -1,6 +1,6 @@
 ;; sys-org.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; Org setup
+;; Org setup.  Why I got this, I have no idea, why I'm keeping it? no idea either
 ;;; code:
 
 ;; wrap lines after 80 chars
@@ -90,7 +90,7 @@
 
 ;; Org title script
 (defun dm/my-org-template ()
-  "Insert a template for an org file with a title, author, email, current date and tags."
+  "Insert a template for an org file with a title, author, email, date and tags."
   (interactive)
   (insert (concat "#+TITLE: My Org File\n#+AUTHOR: David Mebo\n#+EMAIL: mebodave@gmail.com\n#+DATE: " (format-time-string "%Y-%m-%d") "\n#+TAGS: \n\n")))
 

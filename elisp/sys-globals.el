@@ -17,6 +17,9 @@
 ;; more vertico configs
 (use-package emacs
   :init
+  ;; TAB for corfu
+  (setq completion-cycle-threshold 3
+	tab-always-indent 'complete)
   (defun crm-indicator (args)
     (cons (format "[CRM%s] %s"
 		  (replace-regexp-in-string
@@ -39,7 +42,7 @@
   :init
   (setq completion-styles '(orderless basic)
 	completion-category-defaults nil
-	completion-category-overrides '((file (styles partial-completion)))))
+	completion-category-overrides '((eglot (orderless)))))
 ;; vertico ends here (for now maybe...)
 
 ;; consult
@@ -202,19 +205,6 @@
 ;; any vc files
 (setq vc-make-backup-files t)
 
-;; tree-sitter global configs
-;; tree-sitter langs
-(use-package tree-sitter-langs
-  :ensure t
-  :after tree-sitter)
-
-;; tree-sitter
-(use-package tree-sitter
-  :ensure t
-  :config
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
-
 ;; projectile
 ;; for new PCs, set the path
 (use-package projectile
@@ -335,33 +325,33 @@
 ;; this still needs to be set for `blink-matching-open` to work
 (setq blink-matching-paren 'show)
 
-(let ((ov nil)) ; keep track of the overlay
-  (advice-add
-   #'show-paren-function
-   :after
-   (defun show-paren--off-screen+ (&rest _args)
-     "Display matching line for off-screen paren."
-     (when (overlayp ov)
-       (delete-overlay ov))
-     ;; check if it's appropriate to show match info,
-     ;; see `blink-paren-post-self-insert-function'
-     (when (and (overlay-buffer show-paren--overlay)
-                (not (or cursor-in-echo-area
-                         executing-kbd-macro
-                         noninteractive
-                         (minibufferp)
-                         this-command))
-                (and (not (bobp))
-                     (memq (char-syntax (char-before)) '(?\) ?\$)))
-                (= 1 (logand 1 (- (point)
-                                  (save-excursion
-                                    (forward-char -1)
-                                    (skip-syntax-backward "/\\")
-                                    (point))))))
-       (save-excursion
-         (goto-char (overlay-start show-paren--overlay))
-         (setq ov (make-overlay (line-beginning-position) (line-end-position)))
-         (overlay-put ov 'face '(:underline t)))))))
+;; (let ((ov nil)) ; keep track of the overlay
+;;   (advice-add
+;;    #'show-paren-function
+;;    :after
+;;    (defun show-paren--off-screen+ (&rest _args)
+;;      "Display matching line for off-screen paren."
+;;      (when (overlayp ov)
+;;        (delete-overlay ov))
+;;      ;; check if it's appropriate to show match info,
+;;      ;; see `blink-paren-post-self-insert-function'
+;;      (when (and (overlay-buffer show-paren--overlay)
+;;                 (not (or cursor-in-echo-area
+;;                          executing-kbd-macro
+;;                          noninteractive
+;;                          (minibufferp)
+;;                          this-command))
+;;                 (and (not (bobp))
+;;                      (memq (char-syntax (char-before)) '(?\) ?\$)))
+;;                 (= 1 (logand 1 (- (point)
+;;                                   (save-excursion
+;;                                     (forward-char -1)
+;;                                     (skip-syntax-backward "/\\")
+;;                                     (point))))))
+;;        (save-excursion
+;;          (goto-char (overlay-start show-paren--overlay))
+;;          (setq ov (make-overlay (line-beginning-position) (line-end-position)))
+;;          (overlay-put ov 'face '(:underline t)))))))
 
 
 ;; unless you got wide screens and know your way with them keybinds proper
@@ -412,6 +402,58 @@
   :bind
   ("M-f" . evilnc-comment-or-uncomment-lines))
 
+;; corfu
+(use-package corfu
+  :custom
+  (corfu-cycle t)
+  (corfu-auto t)
+  (corfu-quit-at-boundary nil)
+  (corfu-quit-no-match t)
+  (corfu-echo-mode t)
+  (corfu-history-mode t)
+  (corfu-popupinfo-mode t)
+  ;; (corfu-auto-delay 0.25)
+  ;; (corfu-auto-prefix 0)
+  :bind
+  (:map corfu-map
+	("TAB" . corfu-next)
+	("S-TAB" . corfu-previous))
+  :init
+  (global-corfu-mode))
+
+;; Kind icons
+(use-package kind-icon
+  :ensure t
+  :after corfu
+  :custom
+  (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
+;; whitespace
+(require 'whitespace)
+(setq whitespace-line-column 80) ;; limit line length to 80
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)
+
+;; shebangs for programming modes
+(defun dm/shebang-and-rev-buffer ()
+  "Add a shebang at the top of the file and reverts buffer."
+  (interactive)
+  (goto-char (point-min))
+  (let ((shebang (cond ((equal major-mode 'sh-mode) "#!/usr/bin/env bash\n")
+		      ((equal major-mode 'python-mode) "#!/usr/bin/env python3\n")
+		       (t nil))))
+       (when shebang
+	 (insert shebang)
+	 (save-buffer t))
+       (revert-buffer t t)))
+
+;; C tabs
+(setq c-default-style "bsd"
+      c-basic-offset 8
+      tab-width 8
+      indent-tabs-mode t)
 
 (provide 'sys-globals)
 ;;; sys-globals.el ends here

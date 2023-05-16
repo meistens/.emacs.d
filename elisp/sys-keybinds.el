@@ -1,6 +1,6 @@
 ;;; sys-keybinds.el --- -*- lexical-binding: t -*-
 ;;; Commentary:
-;; Keybinds here. Makes it easier to keep track em
+;; Keybinds here.  Makes it easier to keep track em
 ;;; Code:
 
 ;; Unbind unneeded keys
@@ -20,6 +20,13 @@
 
 ;; ESC now in place of C-g
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;; append semistandard logo to README (DO IT IF YOU HAVE A Js FILE, IT DOESN'T
+;; DETECT IT AND APPEND!!!)
+(global-set-key (kbd "C-c j s") 'dm/append-semistandard-logo)
+
+;; shebang kbd
+(global-set-key (kbd "C-c s") 'dm/shebang-and-rev-buffer)
 
 (provide 'sys-keybinds)
 ;;; sys-keybinds.el ends here
