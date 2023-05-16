@@ -1,6 +1,6 @@
 ;;; sys-shell.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; shell configs
+;; shell configs (both bash and Emacs shells)
 ;;; code:
 
 ;; set up the correct path
@@ -173,8 +173,8 @@ more-helpful local prompt."
 
 ;; shell in the buffer
 (defun eshell-here ()
-  "Opens up a new shell in the directory associated with the
-current buffer's file. The eshell is renamed to match that
+  "Opens up a new shell in the directory associated with current buffer's file.
+The eshell is renamed to match that
 directory to make multiple eshell windows easier."
   (interactive)
   (let* ((parent (if (buffer-file-name)
@@ -193,7 +193,9 @@ directory to make multiple eshell windows easier."
 (bind-key "C-e" 'eshell-here)
 
 (defun eshell-here ()
-  "Opens up a new shell in the directory associated with the current buffer's file.  The eshell is renamed to match that directory to make multiple eshell windows easier."
+  "Opens a new shell in the directory associated with the current buffer's file.
+The eshell is renamed to match that directory to make multiple eshell
+ windows easier."
   (interactive)
   (let* ((height (/ (window-total-height) 3)))
     (split-window-vertically (- height))
@@ -239,6 +241,19 @@ directory to make multiple eshell windows easier."
 
 (add-to-list 'flycheck-checkers 'shellcheck)
 (add-hook 'sh-mode-hook (lambda () (flycheck-mode 1)))
- 
+
+;; shebangs for programming modes, add your preferred lang environment
+(defun dm/shebang-and-rev-buffer ()
+  "Add a shebang at the top of the file and reverts buffer."
+  (interactive)
+  (goto-char (point-min))
+  (let ((shebang (cond ((equal major-mode 'sh-mode) "#!/usr/bin/env bash\n")
+		      ((equal major-mode 'python-mode) "#!/usr/bin/env python3\n")
+		       (t nil))))
+       (when shebang
+	 (insert shebang)
+	 (save-buffer t))
+       (revert-buffer t t)))
+
 (provide 'sys-shell)
 ;;; sys-shell.el ends here

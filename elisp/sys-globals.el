@@ -436,19 +436,6 @@
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
-;; shebangs for programming modes
-(defun dm/shebang-and-rev-buffer ()
-  "Add a shebang at the top of the file and reverts buffer."
-  (interactive)
-  (goto-char (point-min))
-  (let ((shebang (cond ((equal major-mode 'sh-mode) "#!/usr/bin/env bash\n")
-		      ((equal major-mode 'python-mode) "#!/usr/bin/env python3\n")
-		       (t nil))))
-       (when shebang
-	 (insert shebang)
-	 (save-buffer t))
-       (revert-buffer t t)))
-
 ;; C tabs
 (setq c-default-style "bsd"
       c-basic-offset 8
