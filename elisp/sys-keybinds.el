@@ -28,5 +28,14 @@
 ;; shebang kbd
 (global-set-key (kbd "C-c s") 'dm/shebang-and-rev-buffer)
 
+;; split window horizontally and focus on it kbd
+(global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
+
+;; split window vertically and focus on it kbd
+(global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
+
+;; make ibuffer default
+(global-set-key (kbd "C-x b") 'ibuffer)
+
 (provide 'sys-keybinds)
 ;;; sys-keybinds.el ends here

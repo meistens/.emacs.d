@@ -1,9 +1,12 @@
 ;;; sys-UI.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; Emacs UI, gotta look nice though
+;; File contains configs that makes Emacs more "modern".
 ;;; code:
 
 ;; doom-theme
+;; what it does, theme Emacs, though of recent, once upon a time, you needed
+;; this and all-the-icons (not that necessary) to actually make doom-modeline
+;; look nice.  Fun times...
 (use-package doom-themes
   :ensure t
   :config
@@ -16,23 +19,11 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
-;; all-the-icons
-(use-package all-the-icons
-  :if (display-graphic-p))
-;; run M-x all-the-icons-install-fonts <RET> (same as enter key)
-
 ;; doom-modeline
-;; (use-package doom-modeline
-;;   :ensure t
-;;   :hook (after-init . doom-modeline-mode))
-;; (setq doom-modeline-height 20)
-;; (setq doom-modeline-bar-width 4)
-;; (setq doom-modeline-icon t)
-;; (setq doom-modeline-major-mode-icon t)
-;; (setq doom-modeline-major-mode-color-icon t)
-;; (setq doom-modeline-buffer-state-icon t)
-;; (setq doom-modeline-buffer-modification-icon t)
-;; (setq doom-modeline-env-load-string "be patient...")
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode))
+;; if you encounter lag, uncomment below
 ;; (setq inhibit-compacting-font-caches t)
 
 ;; line numbers
@@ -93,7 +84,6 @@
   (split-window-below)
   (balance-windows)
   (other-window 1))
-(global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
 
 (defun split-and-follow-vertically ()
   "Focus on split window."
@@ -101,13 +91,9 @@
   (split-window-right)
   (balance-windows)
   (other-window 1))
-(global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 
 ;; kill buffer without asking for confirmation
 (setq kill-buffer-query-functions (delq 'process-kill-buffer-query-function kill-buffer-query-functions))
-
-;; make ibuffer default
-(global-set-key (kbd "C-x b") 'ibuffer)
 
 (use-package ligature
   :load-path "site-elisp/ligature.el"
