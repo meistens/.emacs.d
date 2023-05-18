@@ -1,9 +1,11 @@
 ;;; sys-globals.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; some misc stuff, should be in sys-configs, ah well...
+;; File contains configs that makes Emacs work for me.  The naming is all weird,
+;; but it's my config, if you clone/use, feel free to put wherever
 ;;; code:
 
-;; vertico
+;; Vertico
+;; Provides performant and minimalistic completion UI, has some helpers.
 (use-package vertico
   :init
   (vertico-mode)
@@ -37,24 +39,27 @@
 ;; enable recursive minibuffers
 (setq enable-recursive-minibuffers t))
 
-;; basic orderless setup with vertico
+;; Orderless setup with vertico.
+;; Orderless provides more advanced completion styles, noticed completion was
+;; passed to eglot
 (use-package orderless
   :init
   (setq completion-styles '(orderless basic)
 	completion-category-defaults nil
 	completion-category-overrides '((eglot (orderless)))))
-;; vertico ends here (for now maybe...)
+;; Vertico ends here (for now maybe...)
 
-;; consult
-;; Example Configuration for Consult (yep, its a copy-pasta, sue me)
+;; Consult
+;; Search and Navigation commands
+;; Example configuration for Consult (yep, its a copy-pasta, sue me)
 (use-package consult
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings in `mode-specific-map'
-         ("C-c M-x" . consult-mode-command)
+         ("C-c x" . consult-mode-command) ;; runs commands of installed packages (more like functions?) in a jiffy
          ("C-c h" . consult-history)
          ("C-c k" . consult-kmacro)
-         ("C-c m" . consult-man)
-         ("C-c i" . consult-info)
+         ("C-c m" . consult-man) ;; man page(s) in Emacs!
+         ("C-c i" . consult-info) ;; man page(s), but only for packages related to building and using Emacs (?)
          ([remap Info-search] . consult-info)
          ;; C-x bindings in `ctl-x-map'
          ("C-x M-:" . consult-complex-command)     ;; orig. repeat-complex-command
@@ -85,7 +90,7 @@
          ("M-s g" . consult-grep)
          ("M-s G" . consult-git-grep)
          ("M-s r" . consult-ripgrep)
-         ("M-s l" . consult-line)
+         ("C-s" . consult-line) ;; replaces I-search (it almost does the same thing...)
          ("M-s L" . consult-line-multi)
          ("M-s k" . consult-keep-lines)
          ("M-s u" . consult-focus-lines)
