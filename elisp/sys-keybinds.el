@@ -25,9 +25,6 @@
 ;; DETECT IT AND APPEND!!!)
 (global-set-key (kbd "C-c j s") 'dm/append-semistandard-logo)
 
-;; shebang kbd
-(global-set-key (kbd "C-c s") 'dm/shebang-and-rev-buffer)
-
 ;; split window horizontally and focus on it kbd
 (global-set-key (kbd "C-x 2") 'split-and-follow-horizontally)
 
@@ -36,6 +33,9 @@
 
 ;; make ibuffer default
 (global-set-key (kbd "C-x b") 'ibuffer)
+
+;; shebang kbd
+(global-set-key (kbd "C-c s") 'dm/shebang-and-rev-buffer)
 
 (provide 'sys-keybinds)
 ;;; sys-keybinds.el ends here
