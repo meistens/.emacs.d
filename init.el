@@ -38,6 +38,9 @@
 ;; JavaScript
 (require 'sys-javascript)
 
+;; Shell (lisp shell, and related shell functions)
+(require 'sys-shell)
+
 ;; keybinds
 (load "sys-keybinds")
 
