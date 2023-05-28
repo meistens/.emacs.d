@@ -89,7 +89,7 @@
          ("M-s D" . consult-locate)
          ("M-s g" . consult-grep)
          ("M-s G" . consult-git-grep)
-         ("M-s r" . consult-ripgrep)
+         ("M-s r" . consult-ripgrep) ;; install ripgrep on system!
          ("C-s" . consult-line) ;; replaces I-search (it almost does the same thing...)
          ("M-s L" . consult-line-multi)
          ("M-s k" . consult-keep-lines)
@@ -170,12 +170,6 @@
   :config
   (nerd-icons-completion-mode))
 
-;; color rg, make sure ripgrep is installed in PATH
-(use-package color-rg
-  :load-path (lambda () (expand-file-name "site-elisp/color-rg" user-emacs-directory))
-  :if (executable-find "rg")
-  :bind ("C-M-s" . color-rg-search-input))
-
 ;; disk usage
 (use-package disk-usage
   :commands (disk-usage))
@@ -212,10 +206,11 @@
 
 ;; projectile
 ;; for new PCs, set the path
+;; Till it supports vertico, the custom definition stays off
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
-  :custom ((projectile-completion-system 'ivy))
+  ;; :custom ((projectile-completion-system 'ivy))
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
