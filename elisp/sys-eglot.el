@@ -33,17 +33,5 @@
   (add-hook 'python-mode-hook 'eglot-ensure)
   (add-hook 'sh-mode-hook 'eglot-ensure))
 
-;; Detect Venv automatically and uses eglot on it
-;; (defun eglot-detect-virtualenv ()
-;;   "Detects if a virtaul environment (venv) is activated for Python."
-;;   (let* ((venv-dir-name "Projects")
-;; 	 (venv-bin-dir (locate-dominating-file default-directory venv-dir-name)))
-;;     (when venv-bin-dir
-;;       (let* ((python-executable (concat venv-bin-dir "bin/python"))
-;; 	     (venv-name (file-name-base (directory-file-name venv-bin-dir))))
-;; 	(setq-local eglot-python-command python-executable)
-;; 	(message "Virtual environment activated: %s" venv-name)))))
-;; (add-hook 'python-mode-hook 'eglot-detect-virtualenv)
-
 (provide 'sys-eglot)
 ;;; sys-eglot.el ends here

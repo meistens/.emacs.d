@@ -1,8 +1,6 @@
 ;;; sys-javascript.el --- -*- lexical-binding: t -*-
 ;;; Commentary:
-;; JavaScript configuration file.  Obviously there is little to zero need
-;; for setting up js2-mode, espescially if semistandard is setup,
-;; but that can be removed ez and semistandard will do its job anyways
+;; JavaScript configuration file.
 ;;; code:
 
 ;; js2-mode

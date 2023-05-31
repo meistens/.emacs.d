@@ -1,6 +1,6 @@
 ;;; sys-settings.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; contains some settings/configs applied to Emacs
+;; Settings
 ;;; code:
 
 ;; UTF-8

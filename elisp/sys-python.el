@@ -1,24 +1,19 @@
-;;; sys-python.el --- -*- lexical-binding: t -*-
+;; sys-python.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; Mostly Python stuff outside of eglot like venvs and other stuff
+;; Python setup
 ;;; code:
-
-;; Virtual env setup
-;; Apparently, this does not work per-se if a venv is opened in the terminal
-;; so best option is to open Emacs via terminal inside the directory where the
-;; .envrc is open.
-;; Till then, probably look elsewhere for a proper Virtual environment setup
-;; that works or be (don't) like me and have a script that does everything.
-
-(use-package direnv
-  :config
-  (direnv-mode 1))
-
 (use-package pyvenv
-  :init
-  (setenv "WORKON_HOME" (substitute-in-file-name "${WORKON_HOME}"))
+  :ensure t
   :config
-  (pyvenv-mode 1))
+  (pyvenv-mode t)
+
+  ;; Set correct Python interpreter
+  (setq pyvenv-post-activate-hooks
+        (list (lambda ()
+                (setq python-shell-interpreter (concat pyvenv-virtual-env "bin/python3")))))
+  (setq pyvenv-post-deactivate-hooks
+        (list (lambda ()
+                (setq python-shell-interpreter "python3")))))
 
 (provide 'sys-python)
 ;;; sys-python.el ends here

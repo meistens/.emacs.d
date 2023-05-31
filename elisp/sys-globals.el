@@ -1,7 +1,8 @@
 ;;; sys-globals.el --- -*- lexical-binding: t -*-
 ;;; commentary:
 ;; File contains configs that makes Emacs work for me.  The naming is all weird,
-;; but it's my config, if you clone/use, feel free to put wherever
+;; but it's my config, if you clone/use, feel free to do whatever, and put stuff
+;; wherever...
 ;;; code:
 
 ;; Vertico
@@ -40,8 +41,6 @@
 (setq enable-recursive-minibuffers t))
 
 ;; Orderless setup with vertico.
-;; Orderless provides more advanced completion styles, noticed completion was
-;; passed to eglot
 (use-package orderless
   :init
   (setq completion-styles '(orderless basic)
@@ -112,7 +111,6 @@
 
   ;; The :init configuration is always executed (Not lazy)
   :init
-
   ;; Optionally configure the register formatting. This improves the register
   ;; preview for `consult-register', `consult-register-load',
   ;; `consult-register-store' and the Emacs built-ins.
@@ -152,10 +150,6 @@
   (setq consult-narrow-key "<") ;; "C-+"
   )
 
-;; all-the-icons-completion (uncomment, and download this one if you want)
-;; (require 'all-the-icons-completion)
-;; (all-the-icons-completion-mode)
-
 ;; marginalia setup
 (use-package marginalia
   :init
@@ -165,7 +159,7 @@
   :init
   (marginalia-mode))
 
-;; nerd-fonts icons (comment out if you prefer all-the-icons-completion)
+;; nerd-fonts icons
 (use-package nerd-icons-completion
   :config
   (nerd-icons-completion-mode))

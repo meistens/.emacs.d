@@ -1,6 +1,6 @@
 ;;; sys-progs.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; 
+;; Corfu used in place of this, but still works
 ;;; code:
 
 ;; company

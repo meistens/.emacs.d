@@ -1,6 +1,6 @@
 ;; sys-org.el --- -*- lexical-binding: t -*-
 ;;; commentary:
-;; Org setup.  Why I got this, I have no idea, why I'm keeping it? no idea either
+;; Org setup.
 ;;; code:
 
 ;; wrap lines after 80 chars
